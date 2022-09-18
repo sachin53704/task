@@ -11,13 +11,16 @@ class DashboardController extends Controller
 
     public function __construct()
     {
+        // to call dashboard service class
         $this->dashboardService = new DashboardService;
     }
 
     public function dashboard()
     {
+        // to get the total active category
         $category = $this->dashboardService->getTotalCategory();
 
+        // to get the total active material
         $material = $this->dashboardService->getTotalMaterial();
 
         return view('dashboard.dashboard', compact('category', 'material'));

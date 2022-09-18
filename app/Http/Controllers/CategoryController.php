@@ -12,11 +12,13 @@ class CategoryController extends Controller
 
     public function __construct()
     {
+        // to call category service class
         $this->categoryService = new CategoryService;
     }
 
     public function list()
     {
+        // to get the list of category data
         $category = $this->categoryService->list();
 
         return view('category.list', compact('category'));
@@ -29,6 +31,7 @@ class CategoryController extends Controller
 
     public function store(CategoryRequest $req)
     {
+        // to store the new category
         $category = $this->categoryService->store($req);
 
         if($category)
@@ -41,6 +44,7 @@ class CategoryController extends Controller
 
     public function edit($id)
     {
+        // to get the single category details
         $category = $this->categoryService->edit($id);
 
         return view('category.edit', compact('category'));
@@ -48,6 +52,7 @@ class CategoryController extends Controller
 
     public function update(CategoryRequest $req)
     {
+        // to update single category details
         $category = $this->categoryService->update($req);
 
         if($category)
@@ -60,6 +65,7 @@ class CategoryController extends Controller
 
     public function delete(Request $req)
     {
+        // to delete the single category and add it to the trash
         $category = $this->categoryService->delete($req);
 
         if($category)
@@ -72,6 +78,7 @@ class CategoryController extends Controller
 
     public function getTrash()
     {
+        //  to get the category trash data
         $category = $this->categoryService->getTrash();
 
         return view('category.trash', compact('category'));
@@ -79,6 +86,7 @@ class CategoryController extends Controller
 
     public function restore(Request $req)
     {
+        // to restore the category by id
         $category = $this->categoryService->restore($req);
 
         if($category)
@@ -92,6 +100,7 @@ class CategoryController extends Controller
 
     public function deleteForever(Request $req)
     {
+        // permanentraly delete the category by id
         $category = $this->categoryService->deleteForever($req);
 
         if($category)

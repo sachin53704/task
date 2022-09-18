@@ -11,6 +11,7 @@ class UserController extends Controller
 
     public function __construct()
     {
+        // to call user service class
         $this->userService = new UserService;
     }
 
@@ -21,6 +22,7 @@ class UserController extends Controller
 
     public function saveProfile(Request $req)
     {
+        // to update the user profile details
         $profile = $this->userService->saveProfile($req);
 
         if($profile)

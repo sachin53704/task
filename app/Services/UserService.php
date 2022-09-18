@@ -7,6 +7,7 @@ use Auth;
 
 class UserService
 {
+    // function to update the user profile
     public function saveProfile($req)
     {
         $user = User::find(Auth::user()->id);

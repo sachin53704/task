@@ -47,7 +47,7 @@ class MaterialRequest extends FormRequest
             'name.unique' => 'This material already exists',
             'name.min' => 'Material name should be atleast 3 character',
             'name.regex' => "Please enter only alpha numeric value",
-            'opening_balance.required' =8> "Please enter opening balance"
+            'opening_balance.required' => "Please enter opening balance"
         ];
     }
 }
